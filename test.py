@@ -6,12 +6,12 @@ import math
 
 cap = cv2.VideoCapture(0)
 detector = HandDetector(maxHands=1)
-classifier = Classifier("Model/keras_model.h5", "Model/labels.txt")
+classifier = Classifier("Revamped_Model/keras_model.h5", "Revamped_Model/labels.txt")
 offset = 20
 imgSize = 300
 counter = 0
 
-labels = ["Hello", "I love you", "No", "Okay", "Please", "Thank you", "Yes"]
+labels = ["Hello", "I love you", "No", "Okay", "Please", "Thank you", "Yes","F#ck Off"]
 
 while True:
     success, img = cap.read()
@@ -66,7 +66,7 @@ while True:
             cv2.rectangle(imgOutput, (x-offset, y-offset),
                          (x + w + offset, y + h + offset), (0, 255, 0), 4)
 
-            cv2.imshow('ImageCrop', imgCrop)
+            # cv2.imshow('ImageCrop', imgCrop)
             cv2.imshow('ImageWhite', imgWhite)
 
         except Exception as e:
